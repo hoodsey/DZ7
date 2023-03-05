@@ -50,4 +50,14 @@ public class StatsService {
         }
         return numbMonth;
     }
+    public int numbMonthWhichSalesAboveAvr(long[] sales) {//6. Количество месяцев, в которых продажи были выше среднего
+        long avg  = avrSales(sales);
+        int numbMonth = 0;
+        for (long sale : sales) {
+            if (sale > avg) {
+                numbMonth = numbMonth+1;
+            }
+        }
+        return numbMonth;
+    }
 }
