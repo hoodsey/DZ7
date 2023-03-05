@@ -8,6 +8,14 @@ public class StatsService {
         }
         return sumSale;
     }
+
+    public long avgSales(long[] sales) {// 2. Средняя сумму продаж в месяц
+        long sumSale = 0;// переменная для суммы
+        for (long sale : sales) {
+            sumSale =sumSale + sale;
+        }
+        return sumSale/12;
+    }
     public int minSales(long[] sales) {//3. номер месяца минимальных продаж
         int minMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
