@@ -4,6 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class StatsServiceTest {
     @org.junit.jupiter.api.Test
+    void calculatesumSale() {
+        StatsService service = new StatsService();
+
+        // подготавливаем данные:
+        long[] arrSalesForMonth = new long[]{
+                8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
+        };
+        long expected = 180;
+
+        // вызываем целевой метод:
+        long actual = service.sumSales(arrSalesForMonth);
+
+        // производим проверку (сравниваем ожидаемый и фактический):
+        assertEquals(expected, actual);
+    }
+    @org.junit.jupiter.api.Test
     void calculateMinSales() {
         StatsService service = new StatsService();
 

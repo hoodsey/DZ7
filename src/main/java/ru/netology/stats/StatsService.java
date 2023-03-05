@@ -1,7 +1,13 @@
 package ru.netology.stats;
 
 public class StatsService {
-
+    public long sumSales(long[] sales) {// 1. Сумма всех продаж
+        long sumSale = 0;// переменная для суммы
+        for (long sale : sales) {
+            sumSale =sumSale + sale;
+        }
+        return sumSale;
+    }
     public int minSales(long[] sales) {//3. номер месяца минимальных продаж
         int minMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
