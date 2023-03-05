@@ -20,7 +20,7 @@ public class StatsServiceTest {
         assertEquals(expected, actual);
     }
     @org.junit.jupiter.api.Test
-    void calculateAvgSale() {
+    void calculateAvrSale() {
         StatsService service = new StatsService();
 
         // подготавливаем данные:
@@ -30,7 +30,23 @@ public class StatsServiceTest {
         long expected = 15;
 
         // вызываем целевой метод:
-        long actual = service.avgSales(arrSalesForMonth);
+        long actual = service.avrSales(arrSalesForMonth);
+
+        // производим проверку (сравниваем ожидаемый и фактический):
+        assertEquals(expected, actual);
+    }
+    @org.junit.jupiter.api.Test
+    void calculateMaxSales() {
+        StatsService service = new StatsService();
+
+        // подготавливаем данные:
+        long[] arrSalesForMonth = new long[]{
+                8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
+        };
+        long expected = 8;
+
+        // вызываем целевой метод:
+        long actual = service.maxSales(arrSalesForMonth);
 
         // производим проверку (сравниваем ожидаемый и фактический):
         assertEquals(expected, actual);
