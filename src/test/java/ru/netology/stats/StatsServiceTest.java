@@ -67,4 +67,20 @@ public class StatsServiceTest {
         // производим проверку (сравниваем ожидаемый и фактический):
         assertEquals(expected, actual);
     }
+    @org.junit.jupiter.api.Test
+    void calculateNumbMonthWhichSalesBelowAvrs() {
+        StatsService service = new StatsService();
+
+        // подготавливаем данные:
+        long[] arrSalesForMonth = new long[]{
+                8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
+        };
+        long expected = 5;
+
+        // вызываем целевой метод:
+        long actual = service.numbMonthWhichSalesBelowAvr(arrSalesForMonth);
+
+        // производим проверку (сравниваем ожидаемый и фактический):
+        assertEquals(expected, actual);
+    }
 }
